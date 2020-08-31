@@ -25,7 +25,7 @@ class Admin extends User
     }
     public function printInfo()
     {
-        echo "Здравствуйте" . " " .  $this-> role. " " . $this->name. " " . $this->surname . " " . "Вы можете на сайте делать всё";
+        echo "Здравствуйте" . " " .  $this-> role. " " . $this->name. " " . $this->surname . " " . "У вас полный доступ к сайту";
     }
 }
 
@@ -36,7 +36,7 @@ class manager extends User
     function __construct()
     {
         $this-> password = "aa11bb22cc33";
-        $this-> Login = "Managger";
+        $this-> Login = "Manager";
         $this-> role = "менеджер";
         $this->name = "Иван";
         $this->surname = "Иванов";
@@ -61,7 +61,7 @@ class client extends User
     }
     public function printInfo()
     {
-        echo "Здравствуйте" . " " . $this-> role. " " . $this->name. " " . $this->surname . " " . "Вы можете на сайте просматривать информацию доступную пользователям";
+        echo "Здравствуйте" . " " . $this-> role. " " . $this->name. " " . $this->surname . " " . "Вы можете только просматривать информацию доступную пользователям";
     }
 }
 
@@ -79,7 +79,7 @@ elseif ($login == "Client" and $password == "11071999")
     $client -> printInfo();
 }
 
-elseif ($login == "Managger" and $password == "aa11bb22cc33") {
+elseif ($login == "Manager" and $password == "aa11bb22cc33") {
     $manager = new Manager();
     $manager-> printInfo();
 }
